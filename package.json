@@ -1,0 +1,118 @@
+{
+  "name": "codeybuddy",
+  "displayName": "CodeyBuddy",
+  "description": "CodeyBuddy",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "CodeyBuddy.SuggestCode",
+        "title": "Suggest Code"
+      },
+      {
+        "command": "CodeyBuddy.OptimizeCode",
+        "title": "Optimize Code"
+      },
+      {
+        "command": "xCodeyBuddy.ExplainCode",
+        "title": "Explain Code"
+      },
+      {
+        "command": "CodeyBuddy.AddTests",
+        "title": "Add Tests"
+      },
+      {
+        "command": "CodeyBuddy.AskAnything",
+        "title": "Ask Anything"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "CodeyBuddy.SuggestCode",
+          "group": "z_commands",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "CodeyBuddy.OptimizeCode",
+          "group": "z_commands",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "CodeyBuddy.ExplainCode",
+          "group": "z_commands",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "CodeyBuddy.AddTests",
+          "group": "z_commands",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "CodeyBuddy.AskAnything",
+          "group": "z_commands",
+          "when": "editorTextFocus"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "CodeyBuddy.SuggestCode",
+        "key": "alt+1",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "CodeyBuddy.OptimizeCode",
+        "key": "alt+2",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "CodeyBuddy.ExplainCode",
+        "key": "alt+3",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "CodeyBuddy.AddTests",
+        "key": "alt+4",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "CodeyBuddy.AskAnything",
+        "key": "alt+5",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.77.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
